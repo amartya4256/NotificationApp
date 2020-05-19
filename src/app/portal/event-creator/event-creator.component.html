@@ -1,0 +1,61 @@
+<div class="centered-content top-to-bottom">
+    <div class = "has-background-light login-container">
+        <div class="field title-container">
+            <h2 class = "has-text-primary title">
+                Create Event
+            </h2>
+        </div>
+        <div class="field">
+            <p class="control">
+            <input class="input" type="text" placeholder="Subject" #subject>
+            </p>
+        </div>
+        <div class="field">
+            <p class="control">
+            <input class="input" type="text" placeholder="Content" #content>
+            </p>
+        </div>
+        <div class="control field">
+            <div class="select">
+              <select #type>
+                <option value = "EVENT">Event/Celebration</option>
+                <option value = "HELP">Urgent Help</option>
+                <option value = "HOLIDAY">Holiday</option>
+                <option value = "NEWS">Nagarro News</option>
+                <option value = "POLICY">Policy</option>
+              </select>
+            </div>
+        </div>
+        <div class="field">
+            <p class="control">
+            <input class="input" type="date" placeholder="Date of event" #date>
+            </p>
+        </div>
+
+        <p class="control">
+            <input class = "input" type="text" disabled #list>
+        </p>
+        
+        <div class="control field">
+            <div class="select">
+              
+              <select (change) = "addUser(target, list)" #target>
+                <option value = "">Select targets</option>
+                <option value = {{user.username}} *ngFor = "let user of users">{{user.name}}</option>
+              </select>
+            </div>
+        </div>
+        <div class="field">
+            <p class="control">
+            <button class="button is-success" (click) = "createEvent(subject, content, type, date, list)">
+                Create Event
+            </button>
+            </p>
+        </div>
+        <div class="field">
+            <p class="control red-text">
+                {{message}}
+            </p>
+        </div>
+    </div>
+</div>

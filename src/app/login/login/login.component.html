@@ -1,0 +1,31 @@
+<div class="centered-content top-to-bottom ">
+    <div class = "has-background-light login-container">
+        <div class="field title-container">
+            <h2 class = "has-text-primary title">
+                login
+            </h2>
+        </div>
+        <div class="field">
+            <p class="control">
+            <input class="input" type="text" placeholder="Username" #username>
+            </p>
+        </div>
+        <div class="field">
+            <p class="control">
+            <input class="input" type="password" placeholder="Password" #password>
+            </p>
+        </div>
+        <div class="field">
+            <p class="control">
+            <button class="button is-success" (click) = "login(username, password)">
+                Login
+            </button>
+            </p>
+        </div>
+        <div class="field">
+            <p class="control red-text">
+                {{message}}
+            </p>
+        </div>
+    </div>
+</div>
